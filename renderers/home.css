@@ -3,6 +3,7 @@
 body {
     padding-top: 70px;
     padding-bottom: 30px;
+    overflow: hidden;
 }
 
 div.profile {
