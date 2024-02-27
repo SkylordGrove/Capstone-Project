@@ -1,0 +1,21 @@
+{
+  "name": "electron-companion-app-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.0.1",
+    "electron-rebuild": "^3.2.9"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "jwt-decode": "^4.0.0",
+    "keytar": "^7.9.0"
+  }
+}
