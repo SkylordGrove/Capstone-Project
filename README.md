@@ -2,18 +2,18 @@
 
 Companion app for Muscle Contraction monitoring system.
 
-Note that the React interface must be ran seperately for the time being. Also, an env-variables.json file is required to use authentication.
+An env-variables.json file is required to use this application.
 
-To run, first start the react-ui: (Auto-start fix soon)
+To run, first build the react-ui:
 ```bash
-cd react-ui
+cd react-ui  # electron-companion-app/react-ui
 yarn install
-yarn run start
+yarn build
 ```
-You may close the automatically opened window. (Fix soon)
 
-Then open a new terminal in the electron-companion-app directory and run:
+Then to run the app,
 ```bash
+cd ..  # to return to electron-companion-app directory
 npm install
 npm start
 ```
