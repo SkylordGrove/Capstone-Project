@@ -57,53 +57,53 @@ class App extends PureComponent<Props, State> {
   const data2 = [
     {
     id:1,
-    time:datasetTwo.time[0],
-    value:datasetTwo.data[0]
+    time:datasetTwo.time[datasetTwo.time.length-16],
+    value:datasetTwo.data[datasetTwo.data.length-16]
     },
     {
     id:2,
-    time:datasetTwo.time[1],
-    value:datasetTwo.data[1]
+    time:datasetTwo.time[datasetTwo.time.length-15],
+    value:datasetTwo.data[datasetTwo.data.length-15]
     },
     {
     id:3,
-    time:datasetTwo.time[2],
-    value:datasetTwo.data[2]
+    time:datasetTwo.time[datasetTwo.time.length-14],
+    value:datasetTwo.data[datasetTwo.data.length-14]
     },
     {
       id:4,
-      time:datasetTwo.time[3],
-      value:datasetTwo.data[3]
+      time:datasetTwo.time[datasetTwo.time.length-13],
+      value:datasetTwo.data[datasetTwo.data.length-13]
     },
     {
       id:5,
-      time:datasetTwo.time[4],
-      value:datasetTwo.data[4]
+      time:datasetTwo.time[datasetTwo.time.length-12],
+      value:datasetTwo.data[datasetTwo.data.length-12]
     },
     {
       id:6,
-      time:datasetTwo.time[5],
-      value:datasetTwo.data[5]
+      time:datasetTwo.time[datasetTwo.time.length-11],
+      value:datasetTwo.data[datasetTwo.data.length-11]
     },
     {
       id:7,
-      time:datasetTwo.time[6],
-      value:datasetTwo.data[6]
+      time:datasetTwo.time[datasetTwo.time.length-10],
+      value:datasetTwo.data[datasetTwo.data.length-10]
     },
     {
       id:8,
-      time:datasetTwo.time[7],
-      value:datasetTwo.data[7]
+      time:datasetTwo.time[datasetTwo.time.length-9],
+      value:datasetTwo.data[datasetTwo.data.length-9]
     },
     {
       id:9,
-      time:datasetTwo.time[8],
-      value:datasetTwo.data[8]
+      time:datasetTwo.time[datasetTwo.time.length-8],
+      value:datasetTwo.data[datasetTwo.data.length-8]
     },
     {
       id:10,
-      time:datasetTwo.time[9],
-      value:datasetTwo.data[9]
+      time:datasetTwo.time[datasetTwo.time.length-7],
+      value:datasetTwo.data[datasetTwo.data.length-7]
     }
   ]
     return (

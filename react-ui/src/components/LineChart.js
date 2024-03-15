@@ -1,26 +1,25 @@
 // @flow
 import d3 from "d3";
 import Chart from "./Chart";
-
 import type { State } from "./Chart";
 
 const dates = [
-  new Date("2001"),
-  new Date("2002"),
-  new Date("2003"),
-  new Date("2004"),
-  new Date("2005"),
-  new Date("2006"),
-  new Date("2007"),
-  new Date("2008"),
-  new Date("2009"),
-  new Date("2010"),
-  new Date("2011"),
-  new Date("2012"),
-  new Date("2013"),
-  new Date("2014"),
-  new Date("2015"),
-  new Date("2016"),
+  new Date("1"),
+  new Date("2"),
+  new Date("3"),
+  new Date("4"),
+  new Date("5"),
+  new Date("6"),
+  new Date("7"),
+  new Date("8"),
+  new Date("9"),
+  new Date("10"),
+  new Date("11"),
+  new Date("12"),
+  new Date("13"),
+  new Date("14"),
+  new Date("15"),
+  new Date("16"),
 ];
 
 type Scales = {
@@ -66,7 +65,7 @@ export default class LineChart extends Chart {
   update(state: State) {
     const scales = this.getScales(state);
 
-    this.drawAxis(state, scales);
+    //this.drawAxis(state, scales);
     this.drawLines(state, scales);
   }
 
