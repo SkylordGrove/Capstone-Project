@@ -1,7 +1,7 @@
 const int emgPin = A5; // Analog pin for EMG sensor
 
 unsigned long previousMillis = 0;
-const long interval = 10; // Record data every 1 second
+const long interval = 10; // Record data every 100 ms
 
 void setup() {
   Serial.begin(9600);
