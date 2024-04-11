@@ -1,7 +1,7 @@
 const int emgPin = A5; // Analog pin for EMG sensor
 
 unsigned long previousMillis = 0;
-const long interval = 10; // Record data every 100 ms
+const long interval = 100; // Record data every 100 ms
 
 void setup() {
   Serial.begin(9600);
@@ -27,8 +27,6 @@ void loop() {
 
     // Read EMG sensor value
     float emgValue = analogRead(emgPin);
-    float voltage = emgValue * (5.0 / 1023.0); // Convert to voltage
-    float emgSignal = voltage * 1000; // Convert to mV
 
     // Write date, time, and EMG value to serial port
     Serial.print(hours);
