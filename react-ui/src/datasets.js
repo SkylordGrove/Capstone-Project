@@ -1,10 +1,11 @@
 import lunr from "lunr";
 
 export type Dataset = {
-  id: string,
+  _id: string,
   label: string,
   data: Array<number>,
-  time: Array<number>
+  time: String,
+  timeStamp: string
 };
 
 // prettier-ignore
@@ -129,8 +130,8 @@ const datasets = {
     356: { id: '356', label: `Wages, Experience and Schooling`, data: [ 82, 94, 122, 48, 120, 115, 73, 96, 119, 35, 29, 50, 24, 17, 84, 129 ] },
     358: { id: '358', label: `Yen-dollar Exchange Rate`, data: [ 9, 62, 44, 19, 26, 69, 114, 60, 46, 132, 71, 36, 69, 78, 74, 130 ] },
     359: { id: '359', label: `Choice of Brand for Yogurts`, data: [ 21, 81, 26, 69, 35, 124, 125, 105, 87, 3, 94, 51, 116, 57, 50, 131 ] },
-    360: { id: '360', label: `EMG Reading 2/15`, data: [ 31, 45, 38, 46, 34, 32, 30, 43, 41, 50, 37, 42, 39, 35, 47, 40 ], time: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80] },
-    361: { id: '361', label: `EMG Reading 2/14`, data: [ 36, 38, 37, 40, 49, 33, 32, 39, 46, 30, 41, 45, 31, 42, 44, 43 ], time: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80] },
+    360: { userId: "101", _id: '360', label: `EMG Reading 2/15`, data: [ 31, 45, 38, 46, 34, 32, 30, 43, 41, 50, 37, 42, 39, 35, 47, 40 ], time: "100", timeStamp: "2024-04-08T01:33:23.148Z" },
+    361: { userId: "101", _id: '361', label: `EMG Reading 2/14`, data: [ 36, 38, 37, 40, 49, 33, 32, 39, 46, 30, 41, 45, 31, 42, 44, 43 ], time: "100", timeStamp: "2024-04-08T01:33:23.148Z" },
     757: { id: '757', label: `Reaction times in a sleep deprivation study`, data: [ 19, 9, 46, 132, 80, 63, 100, 67, 128, 29, 112, 70, 19, 9, 46, 132 ] },
 };
 

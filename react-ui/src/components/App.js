@@ -13,6 +13,25 @@ import type { Dataset } from "../datasets";
 import "./App.css";
 
 type Props = {};
+const axios = require("axios");
+
+
+const options = { 
+  method: "GET",
+  url: "https://express-sessions-api.onrender.com/sessions/66134963c3e0e5cf8c1dd950",
+  headers: { "authorization": "Bearer TOKEN" },
+};
+
+const values = [];
+
+axios(options)
+  .then(response => { 
+    console.log(response.data)
+    values.push(response.data.data)  
+  })
+  .catch(error => {
+    console.log(error);
+  });
 
 type State = {
   datasetOne: Dataset,
@@ -25,10 +44,16 @@ class App extends PureComponent<Props, State> {
 
     this.state = {
       datasetOne: datasets["360"],
-      datasetTwo: datasets["361"],
+      datasetTwo: datasets["361"]
     };
-
     (this: any).updateOne = this.updateOne.bind(this);
+    // (this: any).updateOne = this.updateOne(axios(options)
+    // .then(response => { 
+    //   return response.data;
+    // })
+    // .catch(error => {
+    //   console.log(error);
+    // }));
     (this: any).updateTwo = this.updateTwo.bind(this);
   }
 
@@ -54,6 +79,19 @@ class App extends PureComponent<Props, State> {
       selector: row => row.value}    
     
   ];
+  
+  axios(options)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+
+console.log(values)
+datasetTwo.data = values
   const data2 = [
     {
     id:1,
@@ -118,7 +156,7 @@ class App extends PureComponent<Props, State> {
           <ModalTrigger id="blue" label={`Blue: ${datasetOne.label}`}>
             <h3>
               Comparing <br />
-              {datasetTwo.label}
+              {datasetOne.label}
               <br /> to:
             </h3>
             <Autocomplete name="autocomplete" onUpdate={this.updateOne} />
@@ -126,7 +164,7 @@ class App extends PureComponent<Props, State> {
           <ModalTrigger id="red" label={`Red: ${datasetTwo.label}`}>
             <h3>
               Comparing <br />
-              {datasetOne.label}
+              {datasetTwo.label}
               <br /> to:
             </h3>
             <Autocomplete name="autocomplete" onUpdate={this.updateTwo} />
