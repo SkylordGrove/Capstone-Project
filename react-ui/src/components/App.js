@@ -91,7 +91,7 @@ class App extends PureComponent<Props, State> {
 
 
 console.log(values)
-datasetTwo.data = values
+//datasetTwo.data = values
   const data2 = [
     {
     id:1,
