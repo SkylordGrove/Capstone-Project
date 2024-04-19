@@ -65,8 +65,10 @@
     "test:ci": "yarn run lint && yarn run flow && yarn run dist && yarn run test:coverage -- --outputFile build/test-results.json --json"
   },
   "dependencies": {
+    "@types/serialport": "^8.0.5",
     "primereact": "^10.5.0",
     "react-data-table-component": "^7.6.2",
+    "serialport": "^12.0.0",
     "styled-components": "^6.1.8"
   }
 }

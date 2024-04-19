@@ -6,6 +6,8 @@ const { createAuthWindow, createLogoutWindow } = require('./main/auth-process');
 const createAppWindow = require('./main/app-process');
 const authService = require('./services/auth-service');
 const apiService = require('./services/api-service');
+const backendService = require('./services/backend-service');
+const axios = require('axios');
 
 async function showWindow() {
     try {
@@ -23,6 +25,7 @@ app.on('ready', () => {
     // Handle IPC messages from the renderer process.
     ipcMain.handle('auth:get-profile', authService.getProfile);
     ipcMain.handle('api:get-private-data', apiService.getPrivateData);
+    ipcMain.handle('api:get-arduino-data', backendService.getArduinoData);
     ipcMain.on('auth:log-out', () => {
         BrowserWindow.getAllWindows().forEach(window => window.close());
         createLogoutWindow();

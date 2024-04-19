@@ -7,6 +7,7 @@ const electronAPI = {
     getProfile: () => ipcRenderer.invoke('auth:get-profile'),
     logOut: () => ipcRenderer.send('auth:log-out'),
     getPrivateData: () => ipcRenderer.invoke('api:get-private-data'),
+    getArduinoData: () => ipcRenderer.invoke('api:get-arduino-data'),
 };
 
 // Register the API with the contextBridge

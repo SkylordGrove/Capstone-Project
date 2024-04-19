@@ -11,6 +11,15 @@ document.getElementById('logout').onclick = () => {
     window.electronAPI.logOut();
 };
 
+document.getElementById('r-btn').onclick = async () => {
+    try {
+        const response = await window.electronAPI.getArduinoData();
+        console.log(response);
+    } catch(error) {
+        console.error('Error connecting to the API: ' + error);
+    }
+};
+
 document.getElementById('secured-request').onclick = async () => {
     try {
         const response = await window.electronAPI.getPrivateData();

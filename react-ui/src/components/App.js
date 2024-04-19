@@ -6,7 +6,6 @@ import ModalTrigger from "./ModalTrigger";
 import Autocomplete from "./Autocomplete";
 import ExampleChart from "./ExampleChart";
 
-
 import datasets from "../datasets";
 import type { Dataset } from "../datasets";
 
