@@ -1,5 +1,6 @@
 const http = require('http');
 const authService = require('../services/auth-service');
+const backendService = require('../services/backend-service');
 
 const HOST = 'localhost';
 const PORT = 8080;
@@ -15,6 +16,12 @@ const requestListener = function (req, res) {
         case "/token":
             res.writeHead(200);
             res.end(`${JSON.stringify(authService.getAccessToken())}`);
+            break;
+        case "/arduino":
+            res.writeHead(200);
+            backendService.getArduinoData().then((response) => {
+                res.end(`${JSON.stringify(response)}`);
+            });
             break;
         default:
             res.writeHead(404);

@@ -7,6 +7,7 @@ import Autocomplete from "./Autocomplete";
 import ExampleChart from "./ExampleChart";
 import FetchUserButton from "./FetchUserButton";
 import GetTokenButton from "./GetTokenButton";
+import FetchArduinoButton from "./FetchArduinoButton";
 
 import datasets from "../datasets";
 import type { Dataset } from "../datasets";
@@ -150,6 +151,7 @@ console.log(values)
           <div>
               <FetchUserButton />
               <GetTokenButton />
+              <FetchArduinoButton />
           </div>
         <div>
         <DataTable
