@@ -5,7 +5,8 @@ import DataTable from "react-data-table-component";
 import ModalTrigger from "./ModalTrigger";
 import Autocomplete from "./Autocomplete";
 import ExampleChart from "./ExampleChart";
-
+import FetchUserButton from "./FetchUserButton";
+import GetTokenButton from "./GetTokenButton";
 
 import datasets from "../datasets";
 import type { Dataset } from "../datasets";
@@ -16,7 +17,7 @@ type Props = {};
 const axios = require("axios");
 
 
-const options = { 
+const options = {
   method: "GET",
   url: "https://express-sessions-api.onrender.com/sessions/66134963c3e0e5cf8c1dd950",
   headers: { "authorization": "Bearer TOKEN" },
@@ -25,9 +26,9 @@ const options = {
 const values = [];
 
 axios(options)
-  .then(response => { 
+  .then(response => {
     console.log(response.data)
-    values.push(response.data.data)  
+    values.push(response.data.data)
   })
   .catch(error => {
     console.log(error);
@@ -48,7 +49,7 @@ class App extends PureComponent<Props, State> {
     };
     (this: any).updateOne = this.updateOne.bind(this);
     // (this: any).updateOne = this.updateOne(axios(options)
-    // .then(response => { 
+    // .then(response => {
     //   return response.data;
     // })
     // .catch(error => {
@@ -71,15 +72,15 @@ class App extends PureComponent<Props, State> {
 
   render() {
     const { datasetOne, datasetTwo } = this.state;
-    const columns =[ 
+    const columns =[
       {
       name: 'time',
       selector: row => row.time},
       {name: 'value',
-      selector: row => row.value}    
-    
+      selector: row => row.value}
+
   ];
-  
+
   axios(options)
   .then((response) => response.json())
   .then((data) => {
@@ -146,6 +147,10 @@ console.log(values)
   ]
     return (
       <div className="App">
+          <div>
+              <FetchUserButton />
+              <GetTokenButton />
+          </div>
         <div>
         <DataTable
           columns = {columns}

@@ -6,6 +6,7 @@ const { createAuthWindow, createLogoutWindow } = require('./main/auth-process');
 const createAppWindow = require('./main/app-process');
 const authService = require('./services/auth-service');
 const apiService = require('./services/api-service');
+const serverProcess = require('./main/server-process');
 
 async function showWindow() {
     try {
@@ -27,6 +28,7 @@ app.on('ready', () => {
         BrowserWindow.getAllWindows().forEach(window => window.close());
         createLogoutWindow();
     });
+    require('./main/server-process');
 
     showWindow();
 });
