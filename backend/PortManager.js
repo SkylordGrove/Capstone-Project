@@ -1,14 +1,17 @@
 const http = require('node:http');
 var SerialPort = require("serialport");
 //var port = "COM2";                          //Uncomment when connected to Arduino
+var counter = 0;
 
 var dataset = {               //Might need to pass your label in, but could instead hard code it to "Reading from *insert timestamp here*"
-  id: "",
-  label: "Temp",
+  id: "461",
+  label: "EMG Reading 4/23",
   timestamp: "",
   data: [],
   time: []
 }
+
+timestamp = Date.now()
 
 /*var serialPort = new SerialPort(port, {     //Uncomment when connected to Arduino
   baudRate: 9600
@@ -17,6 +20,9 @@ var dataset = {               //Might need to pass your label in, but could inst
 http.createServer((request, response) => {
   console.log("Server running");
   if (request.method === 'GET' && request.url === '/dataset') {
+    dataset.data.push(counter);
+    dataset.time.push(counter);
+    counter += 1;
     response.writeHead(200, { 'Content-Type': 'application/json' });
     response.write(JSON.stringify(dataset));
     response.end();

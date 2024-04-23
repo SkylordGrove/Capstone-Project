@@ -177,8 +177,8 @@ console.log(values)
           </ModalTrigger>
           <ModalTrigger id="Yellow" label={`New Dataset`}>
             <h3>
-            <FetchArduinoButton />
-            <ExampleChart data={[datasetOne.data]} />
+              <FetchArduinoButton dataset={[datasetOne]}/>
+              <ExampleChart data={[datasetOne.data]} />
             </h3>
           </ModalTrigger>
           <ExampleChart data={[datasetOne.data, datasetTwo.data]} />

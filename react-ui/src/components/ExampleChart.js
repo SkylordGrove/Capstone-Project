@@ -41,8 +41,8 @@ class ExampleChart extends Component<Props, State> {
     if (chart) {
       chart.update(this.getChartState(nextProps));
     }
-
-    return false;
+    
+    //return false;
   }
 
   // Tear down the chart and remove the listeners.
