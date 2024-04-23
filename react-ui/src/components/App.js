@@ -151,7 +151,6 @@ console.log(values)
           <div>
               <FetchUserButton />
               <GetTokenButton />
-              <FetchArduinoButton />
           </div>
         <div>
         <DataTable
@@ -175,6 +174,12 @@ console.log(values)
               <br /> to:
             </h3>
             <Autocomplete name="autocomplete" onUpdate={this.updateTwo} />
+          </ModalTrigger>
+          <ModalTrigger id="Yellow" label={`New Dataset`}>
+            <h3>
+            <FetchArduinoButton />
+            <ExampleChart data={[datasetOne.data]} />
+            </h3>
           </ModalTrigger>
           <ExampleChart data={[datasetOne.data, datasetTwo.data]} />
         </div>

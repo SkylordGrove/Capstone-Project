@@ -6,6 +6,7 @@ const GetUserDetails = () => {
     const handleClick = () => {
         console.log('clicked');
         fetch('http://localhost:8080/user').then(res => res.json()).then(data => { console.log(data) });
+        // fetch('https://express-sessions-api.onrender.com/sessions/66134963c3e0e5cf8c1dd950').then(res => res.json()).then(data => { console.log(data) });
     }
     return (
         <div>
