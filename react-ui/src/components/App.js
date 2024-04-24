@@ -7,7 +7,7 @@ import Autocomplete from "./Autocomplete";
 import ExampleChart from "./ExampleChart";
 import FetchUserButton from "./FetchUserButton";
 import GetTokenButton from "./GetTokenButton";
-import FetchArduinoButton from "./FetchArduinoButton";
+import ModalDatasetState from "./ModalDatasetState";
 
 import datasets from "../datasets";
 import type { Dataset } from "../datasets";
@@ -46,7 +46,7 @@ class App extends PureComponent<Props, State> {
 
     this.state = {
       datasetOne: datasets["360"],
-      datasetTwo: datasets["361"]
+      datasetTwo: datasets["361"],
     };
     (this: any).updateOne = this.updateOne.bind(this);
     // (this: any).updateOne = this.updateOne(axios(options)
@@ -177,8 +177,7 @@ console.log(values)
           </ModalTrigger>
           <ModalTrigger id="Yellow" label={`New Dataset`}>
             <h3>
-              <FetchArduinoButton dataset={[datasetOne]}/>
-              <ExampleChart data={[datasetOne.data]} />
+              <ModalDatasetState />
             </h3>
           </ModalTrigger>
           <ExampleChart data={[datasetOne.data, datasetTwo.data]} />

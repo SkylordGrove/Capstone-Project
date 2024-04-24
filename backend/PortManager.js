@@ -7,7 +7,7 @@ var dataset = {               //Might need to pass your label in, but could inst
   id: "461",
   label: "EMG Reading 4/23",
   timestamp: "",
-  data: [],
+  data: [59, 84, 31, 64, 68, 127, 121, 52, 105, 103, 60, 7, 106, 68, 75],
   time: []
 }
 
@@ -23,6 +23,9 @@ http.createServer((request, response) => {
     dataset.data.push(counter);
     dataset.time.push(counter);
     counter += 1;
+    if (counter == 100) {
+      counter = 1;
+    }
     response.writeHead(200, { 'Content-Type': 'application/json' });
     response.write(JSON.stringify(dataset));
     response.end();
