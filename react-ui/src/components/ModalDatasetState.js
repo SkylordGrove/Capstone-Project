@@ -12,7 +12,7 @@ class ModalDatasetState extends PureComponent<Props, State> {
     super(props);
   
     this.state = {
-      modalDataset: datasets["360"],
+      modalDataset: datasets[0],
     };
     (this: any).updateModalDataset = this.updateModalDataset.bind(this);
   }

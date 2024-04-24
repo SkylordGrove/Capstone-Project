@@ -45,9 +45,9 @@ class App extends PureComponent<Props, State> {
     super(props);
 
     this.state = {
-      datasetOne: datasets["360"],
-      datasetTwo: datasets["361"],
-      modalDataset: datasets["361"],
+      datasetOne: datasets[0],
+      datasetTwo: datasets[1],
+      modalDataset: datasets[1],
     };
     (this: any).updateOne = this.updateOne.bind(this);
     // (this: any).updateOne = this.updateOne(axios(options)
