@@ -58,7 +58,7 @@ class App extends PureComponent<Props, State> {
     //   console.log(error);
     // }));
     (this: any).updateTwo = this.updateTwo.bind(this);
-    (this: any).updateModalDataset = this.updateModalDataset.bind(this);
+    //(this: any).updateModalDataset = this.updateModalDataset.bind(this);
   }
 
   updateOne(dataset: Dataset) {
@@ -73,14 +73,14 @@ class App extends PureComponent<Props, State> {
     });
   }
 
-  updateModalDataset(dataset: Dataset) {
+  /*updateModalDataset(dataset: Dataset) {
     this.setState({
       modalDataset: dataset,
     })
-  }
+  }*/
 
   render() {
-    const { datasetOne, datasetTwo, modalDataset } = this.state;
+    const { datasetOne, datasetTwo } = this.state;
     const columns =[
       {
       name: 'time',
@@ -100,7 +100,7 @@ class App extends PureComponent<Props, State> {
   });
 
 
-console.log(values)
+//console.log(values)
 //datasetTwo.data = values
   // const data2 = [
   //   {
@@ -185,10 +185,10 @@ console.log(values)
           </ModalTrigger>
           <ModalTrigger id="Yellow" label={`New Dataset`}>
             <h3>
-              <ModalDatasetState updateModalDataset={this.updateModalDataset} />
+              <ModalDatasetState updateModalDataset={this.updateTwo} />
             </h3>
           </ModalTrigger>
-          <ExampleChart data={[datasetOne.data, modalDataset.data]} />
+          <ExampleChart data={[datasetOne.data, datasetTwo.data]} />
         </div>
       </div>
     );

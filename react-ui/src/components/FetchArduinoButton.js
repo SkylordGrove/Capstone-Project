@@ -21,6 +21,7 @@ class FetchArduinoData extends Component {
                 }
             } else {
                 clearInterval(queryInterval);
+                //TODO: Add Post request to change recording to false and wipe the dataset in PortManager.js
                 document.querySelector('#recordingButton').innerHTML = 'Start Recording';
                 this.props.updateDatasets();
             }
