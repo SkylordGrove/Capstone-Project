@@ -22,6 +22,7 @@ class FetchArduinoData extends Component {
             } else {
                 clearInterval(queryInterval);
                 document.querySelector('#recordingButton').innerHTML = 'Start Recording';
+                this.props.updateDatasets();
             }
 
         }, 100);

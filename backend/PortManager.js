@@ -2,6 +2,7 @@ const http = require('node:http');
 var SerialPort = require("serialport");
 //var port = "COM2";                          //Uncomment when connected to Arduino
 var counter = 0;
+var recording = false;
 
 var dataset = {               //Might need to pass your label in, but could instead hard code it to "Reading from *insert timestamp here*"
   id: "461",
@@ -20,6 +21,7 @@ timestamp = Date.now()
 http.createServer((request, response) => {
   console.log("Server running");
   if (request.method === 'GET' && request.url === '/dataset') {
+    recording = true;
     dataset.data.push(counter);
     dataset.time.push(counter);
     counter += 1;
@@ -62,7 +64,6 @@ function jsonFormatted() {                        //Testing function to display 
       dataset.time.push(elapsedTime); 
     }
     //dataset.data.push(JSON.parse(data));
-    //Add call to a function that passes dataset to the frontend either here or after all data is collected
-    console.log("Data received: \n" + jsonFormatted() + "\n");    //Test log
+    //console.log("Data received: \n" + jsonFormatted() + "\n");    //Test log
   });
 });*/

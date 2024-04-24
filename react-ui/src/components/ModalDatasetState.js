@@ -23,11 +23,15 @@ class ModalDatasetState extends PureComponent<Props, State> {
     });
   }
 
+  updateDatasets = () => {
+    this.props.updateModalDataset(this.state.modalDataset);
+  }
+
   render() {
     const { modalDataset } = this.state;
     return(
       <h3>
-        <FetchArduinoButton updateModalDataset={this.updateModalDataset}/>
+        <FetchArduinoButton updateModalDataset={this.updateModalDataset} updateDatasets={this.updateDatasets}/>
         <ExampleChart data={[modalDataset.data]} />
       </h3>
     );
