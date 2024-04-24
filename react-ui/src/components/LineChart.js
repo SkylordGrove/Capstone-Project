@@ -3,6 +3,7 @@ import d3 from "d3";
 import Chart from "./Chart";
 import type { State } from "./Chart";
 
+
 const dates = [
   new Date(2000),
   new Date(2001),

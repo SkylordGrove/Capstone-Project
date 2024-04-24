@@ -6,7 +6,6 @@ import TextHighlight from "./TextHighlight";
 
 import datasets, { data, related, idx } from "../datasets";
 import type Dataset from "../datasets";
-
 import "./Autocomplete.css";
 
 type Props = {
@@ -72,7 +71,6 @@ class Autocomplete extends Component<Props, State> {
       });
     }
   }
-
   onFetchRequested(update: { reason: string, value: string }) {
     if (["enter", "click"].indexOf(update.reason) === -1) {
       const results = idx.search(update.value);
@@ -166,5 +164,5 @@ class Autocomplete extends Component<Props, State> {
     );
   }
 }
-
+console.log(datasets);
 export default Autocomplete;
