@@ -13,7 +13,7 @@ import datasets from "../datasets";
 import type { Dataset } from "../datasets";
 
 import "./App.css";
-console.log(datasets);
+//console.log(datasets);
 type Props = {};
 const axios = require("axios");
 
