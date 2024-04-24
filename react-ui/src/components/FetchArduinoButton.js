@@ -1,28 +1,38 @@
-import React from 'react';
-
 // Gets Arduino Data from Electron Wrapper
-const FetchArduinoData = (dataset) => {
-    const handleClick = () => {
+import React, { Component } from 'react';
+
+let active = false;
+
+class FetchArduinoData extends Component {
+    handleClick = () => {
+        active = !active;
+        if (active) {
+            document.querySelector('#recordingButton').innerHTML = 'Stop Recording';
+        }
         console.log('clicked');
-        console.log(dataset);
-        setInterval(async () => {
-            try {
-                fetch('http://localhost:8080/arduino')
-                    .then(res => res.json())
-                    //.then(data => console.log(data))
-                    .then(arduinoData => {dataset.dataset[0] = arduinoData;})   //Only updating in this component
-                    .then(console.log(dataset.dataset[0]));                     //need to figure out how to set it in App.js
-            } catch(e) {
-                console.error(e);
+        let queryInterval = setInterval(async () => {
+            if(active) {
+                try {
+                    fetch('http://localhost:8080/arduino')
+                        .then(res => res.json())
+                        .then(arduinoData => {this.props.updateModalDataset(arduinoData)})
+                } catch(e) {
+                    console.error(e);
+                }
+            } else {
+                clearInterval(queryInterval);
+                document.querySelector('#recordingButton').innerHTML = 'Start Recording';
             }
-        }, 1000);
+
+        }, 100);
     }
-    
-    return (
-        <div>
-            <button onClick={handleClick}>Get Arduino Data</button>
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                <button id="recordingButton" type="button" onClick={this.handleClick}>Start Recording</button>
+            </div>
+        )
+    }
 }
 
 export default FetchArduinoData;
