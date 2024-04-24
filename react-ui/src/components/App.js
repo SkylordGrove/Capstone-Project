@@ -13,14 +13,14 @@ import datasets from "../datasets";
 import type { Dataset } from "../datasets";
 
 import "./App.css";
-
+console.log(datasets);
 type Props = {};
 const axios = require("axios");
 
 
 const options = {
   method: "GET",
-  url: "https://express-sessions-api.onrender.com/sessions/66134963c3e0e5cf8c1dd950",
+  url: "https://express-sessions-api.onrender.com/sessions/users/101",
   headers: { "authorization": "Bearer TOKEN" },
 };
 
@@ -45,8 +45,8 @@ class App extends PureComponent<Props, State> {
     super(props);
 
     this.state = {
-      datasetOne: datasets["360"],
-      datasetTwo: datasets["361"]
+      datasetOne: datasets[0],
+      datasetTwo: datasets[1]
     };
     (this: any).updateOne = this.updateOne.bind(this);
     // (this: any).updateOne = this.updateOne(axios(options)
@@ -94,69 +94,69 @@ class App extends PureComponent<Props, State> {
 
 console.log(values)
 //datasetTwo.data = values
-  const data2 = [
-    {
-    id:1,
-    time:datasetTwo.time[datasetTwo.time.length-16],
-    value:datasetTwo.data[datasetTwo.data.length-16]
-    },
-    {
-    id:2,
-    time:datasetTwo.time[datasetTwo.time.length-15],
-    value:datasetTwo.data[datasetTwo.data.length-15]
-    },
-    {
-    id:3,
-    time:datasetTwo.time[datasetTwo.time.length-14],
-    value:datasetTwo.data[datasetTwo.data.length-14]
-    },
-    {
-      id:4,
-      time:datasetTwo.time[datasetTwo.time.length-13],
-      value:datasetTwo.data[datasetTwo.data.length-13]
-    },
-    {
-      id:5,
-      time:datasetTwo.time[datasetTwo.time.length-12],
-      value:datasetTwo.data[datasetTwo.data.length-12]
-    },
-    {
-      id:6,
-      time:datasetTwo.time[datasetTwo.time.length-11],
-      value:datasetTwo.data[datasetTwo.data.length-11]
-    },
-    {
-      id:7,
-      time:datasetTwo.time[datasetTwo.time.length-10],
-      value:datasetTwo.data[datasetTwo.data.length-10]
-    },
-    {
-      id:8,
-      time:datasetTwo.time[datasetTwo.time.length-9],
-      value:datasetTwo.data[datasetTwo.data.length-9]
-    },
-    {
-      id:9,
-      time:datasetTwo.time[datasetTwo.time.length-8],
-      value:datasetTwo.data[datasetTwo.data.length-8]
-    },
-    {
-      id:10,
-      time:datasetTwo.time[datasetTwo.time.length-7],
-      value:datasetTwo.data[datasetTwo.data.length-7]
-    }
-  ]
+  // const data2 = [
+  //   {
+  //   id:1,
+  //   time:datasetTwo.time[datasetTwo.time.length-16],
+  //   value:datasetTwo.data[datasetTwo.data.length-16]
+  //   },
+  //   {
+  //   id:2,
+  //   time:datasetTwo.time[datasetTwo.time.length-15],
+  //   value:datasetTwo.data[datasetTwo.data.length-15]
+  //   },
+  //   {
+  //   id:3,
+  //   time:datasetTwo.time[datasetTwo.time.length-14],
+  //   value:datasetTwo.data[datasetTwo.data.length-14]
+  //   },
+  //   {
+  //     id:4,
+  //     time:datasetTwo.time[datasetTwo.time.length-13],
+  //     value:datasetTwo.data[datasetTwo.data.length-13]
+  //   },
+  //   {
+  //     id:5,
+  //     time:datasetTwo.time[datasetTwo.time.length-12],
+  //     value:datasetTwo.data[datasetTwo.data.length-12]
+  //   },
+  //   {
+  //     id:6,
+  //     time:datasetTwo.time[datasetTwo.time.length-11],
+  //     value:datasetTwo.data[datasetTwo.data.length-11]
+  //   },
+  //   {
+  //     id:7,
+  //     time:datasetTwo.time[datasetTwo.time.length-10],
+  //     value:datasetTwo.data[datasetTwo.data.length-10]
+  //   },
+  //   {
+  //     id:8,
+  //     time:datasetTwo.time[datasetTwo.time.length-9],
+  //     value:datasetTwo.data[datasetTwo.data.length-9]
+  //   },
+  //   {
+  //     id:9,
+  //     time:datasetTwo.time[datasetTwo.time.length-8],
+  //     value:datasetTwo.data[datasetTwo.data.length-8]
+  //   },
+  //   {
+  //     id:10,
+  //     time:datasetTwo.time[datasetTwo.time.length-7],
+  //     value:datasetTwo.data[datasetTwo.data.length-7]
+  //   }
+  // ]
     return (
       <div className="App">
           <div>
-              <FetchUserButton />
-              <GetTokenButton />
+              {/* <FetchUserButton />
+              <GetTokenButton /> */}
           </div>
         <div>
-        <DataTable
+        {/* <DataTable
           columns = {columns}
           data = {data2}
-            />
+            /> */}
         </div>
         <div>
           <ModalTrigger id="blue" label={`Blue: ${datasetOne.label}`}>
