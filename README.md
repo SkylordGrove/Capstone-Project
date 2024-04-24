@@ -4,7 +4,14 @@ Companion app for Muscle Contraction monitoring system.
 
 An env-variables.json file is required to use this application.
 
-To run, first start the arduino backend:
+To run, first upload code to the Arduino board:
+
+Open Arduino IDE
+Upload team10.ino to editor
+Select board you are connecting to
+Click upload & verify
+
+Next, start the arduino backend:
 
 ```bash
 cd backend  # electron-companion-app/backend
